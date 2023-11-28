@@ -1,0 +1,45 @@
+*{
+    color: white;
+}
+button{
+    color: black;
+}
+input{
+    color: black;
+}
+body{
+    background-color: #2F3035;
+    background-image: url(./assests/background-adare-restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat ;
+    
+}
+#logo{
+    margin-left: 40%;
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+#mainP{
+    font-size: 24px;
+}
+#mainPContainer{
+    margin-left: 22%;
+    width: 800px;
+}
+.image{
+    height: 250px;
+    width: 250px;
+}
+.delete{
+    background-color: red;
+}
+.containerFood{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.changeInput{
+    margin-left: 50px;
+}
