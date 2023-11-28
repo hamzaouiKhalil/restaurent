@@ -1,13 +1,27 @@
 const express = require("express");
 const cors = require("cors");
-const {getFood, createFood, updateFood,deleteFood} = require("./database/mongodb/index.js")
+const {getFood, createFood, updateFood,deleteFood,createEvent,getEvents,deleteEvent} = require("./database/mongodb/index.js")
 
 const PORT = 8080;
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-
+// event 
+app.delete("/event/:id", async (req,res)=>{
+  await deleteEvent(req.params.id)
+  res.send("deleted")
+})
+app.post("/event", async (req,res)=>{
+  console.log(req.body)
+  await createEvent(req.body)
+  res.status(202).send("added")
+})
+app.get("/event", async (req, res) => {
+  const food = await getEvents()
+  res.status(201).send(food) 
+});
+//food
 app.get("/:name", async (req, res) => {
   const food = await getFood(req.params.name)
   res.status(201).send(food) 

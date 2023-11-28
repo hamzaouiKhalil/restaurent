@@ -80,3 +80,36 @@ button{
 .update{
    margin-left: 2px;
 }
+.link{
+    font-size: 24px;
+    margin-left: 20px;
+    color: limegreen;
+   
+}
+#linkContainer{
+    margin-bottom: 20px;
+}
+.inputEvent{
+    height: 20px;
+}
+.inputEventDesc{
+    display: block;
+    width: 80%;
+    height: 200px;
+    margin-top: 20px;
+}
+#submitEvent{
+    display: block;}
+.nameEvent{
+    font-size: 40px;
+    color: black;
+}
+.eventContent{
+    font-size: 24px;
+}
+.eventContainer{
+    background-color: grey;
+}
+.deleteEvent{
+    background-color: red;
+}
