@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import Pasta from "./Pasta";
 import axios from "axios"
 
-const PastaList = (props)=>{
+const FoodList = (props)=>{
     const [name,setName] = useState("")
     const [price,setPrice] = useState("")
     const [url,setUrl] = useState("")
     const [category,setCategory] = useState("")
    function submit(){
-    axios.post("http://localhost:8080/",{foodName: name,price,category,image: url})
+    axios.post("http://localhost:8080/",{foodName: name,price,category,image: url}).then(()=>{
+        props.fetchPasta()
+    })
    }
 
     return(
@@ -30,4 +32,4 @@ const PastaList = (props)=>{
         </div>
     )
 }
-export default PastaList;
+export default FoodList;

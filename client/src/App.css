@@ -13,6 +13,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat ;
     
+    
 }
 #logo{
     margin-left: 40%;
@@ -42,4 +43,40 @@ body{
 }
 .changeInput{
     margin-left: 50px;
+}
+iframe{
+    width: 70%;
+    height: 300px;
+    margin-left: 14%;
+    margin-top: 15%;
+}
+footer{
+    margin-top: 50px;
+    background-color: rgba(0, 0, 0, 0.678);
+    height: 100px;
+    text-align: center;
+}
+#footer1{
+    font-size: 10px;
+    padding-top: 20px;
+}
+.foodDisplay{
+    margin-left: 10px;
+}
+input{
+    height: 40px;
+    width: 150px;
+
+}
+button{
+    height: 48px;
+    width: 80px;
+}
+::placeholder {
+    color: rgb(255, 135, 135);
+    opacity: 1; 
+    
+  }
+.update{
+   margin-left: 2px;
 }
