@@ -14,7 +14,7 @@ const Main = (props) => {
     })
   }
   const fetchPasta = () => {
-    axios.get(`http://localhost:8080/`).then((response) => {
+    axios.get(`http://localhost:8080/pasta`).then((response) => {
 
       setData(response.data)
 
@@ -51,6 +51,7 @@ const Main = (props) => {
       <button onClick={() => {
         setView("pasta")
         fetchPasta()
+        console.log(1)
       }
       }>pasta</button>
       <button className="foodDisplay" onClick={() => {
