@@ -118,3 +118,7 @@ button{
     position: absolute;
     margin-top: 5px;
 }
+#searchContainer{
+    display: block;
+    margin-bottom: 20px;
+}

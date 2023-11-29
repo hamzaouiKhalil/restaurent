@@ -7,15 +7,18 @@ const FoodList = (props)=>{
     const [price,setPrice] = useState("")
     const [url,setUrl] = useState("")
     const [category,setCategory] = useState("")
+    
    function submit(){
     axios.post("http://localhost:8080/",{foodName: name,price,category,image: url}).then(()=>{
         props.fetchPasta()
     })
    }
 
+
     return(
         <div>
             <p>add Food</p>
+
             <input placeholder="category" onChange={(e)=>setCategory(e.target.value)}></input>
             <input placeholder="name" onChange={(e)=>setName(e.target.value)}></input>
             <input placeholder="price" onChange={(e)=>setPrice(e.target.value)}></input>

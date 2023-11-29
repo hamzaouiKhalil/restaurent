@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const {getFood, createFood, updateFood,deleteFood,createEvent,getEvents,deleteEvent,EventUpdate} = require("./database/mongodb/index.js")
+const {getFood, createFood, updateFood,deleteFood,createEvent,getEvents,deleteEvent,EventUpdate,search} = require("./database/mongodb/index.js")
 
 const PORT = 8080;
 const app = express();
@@ -26,6 +26,10 @@ app.put("/event/:id",async(req,res)=>{
   res.send("updated")
 })
 //food
+app.get("/s/:name", async(req,res)=>{
+  const searched = await search(req.params.name)
+  res.send(searched)
+})
 app.get("/:name", async (req, res) => {
   const food = await getFood(req.params.name)
   res.status(201).send(food) 

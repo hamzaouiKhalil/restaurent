@@ -5,9 +5,14 @@ import PastaList from "./pastaList";
 
 const Main = (props) => {
   const [view, setView] = useState("pasta")
-  
+  const [searched, setSearch] = useState("")
   const [data, setData] = useState([])
 
+  function searchFunction() {
+    axios.get(`http://localhost:8080/s/${searched}`).then((response) => {
+      setData(response.data)
+    })
+  }
   const fetchPasta = () => {
     axios.get(`http://localhost:8080/`).then((response) => {
 
@@ -39,6 +44,10 @@ const Main = (props) => {
   return (
 
     <main>
+      <div id="searchContainer">
+      <input type="text" id="search" onChange={(e) => setSearch(e.target.value)} />
+      <button id="search" onClick={searchFunction}>search</button>
+      </div>
       <button onClick={() => {
         setView("pasta")
         fetchPasta()
@@ -49,12 +58,12 @@ const Main = (props) => {
         fetchPizza()
       }
       }>Pizza</button>
-            <button  className="foodDisplay" onClick={() => {
+      <button className="foodDisplay" onClick={() => {
         setView("sandwich")
         fetchTacos()
       }
       }>Sandwich</button>
-      <button  className="foodDisplay" onClick={() => {
+      <button className="foodDisplay" onClick={() => {
         setView("plat")
         fetchPlat()
       }
