@@ -30,6 +30,11 @@ const eventSchema = new mongoose.Schema({
   async function getEvents  () {
     return await Events.find({})
   }
+    async function EventUpdate(id,name){
+      return Events.findByIdAndUpdate(id,{name})
+    }
+  
+  //food
 async function getFood  (category) {
   return await Food.find({category})
 }
@@ -51,5 +56,6 @@ module.exports = {
   deleteFood,
   createEvent,
   getEvents,
-  deleteEvent
+  deleteEvent,
+  EventUpdate
 };

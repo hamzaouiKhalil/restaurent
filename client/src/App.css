@@ -113,3 +113,8 @@ button{
 .deleteEvent{
     background-color: red;
 }
+.changeNameEvent{
+    height: 40px;
+    position: absolute;
+    margin-top: 5px;
+}

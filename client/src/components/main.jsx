@@ -9,7 +9,7 @@ const Main = (props) => {
   const [data, setData] = useState([])
 
   const fetchPasta = () => {
-    axios.get(`http://localhost:8080/pasta`).then((response) => {
+    axios.get(`http://localhost:8080/`).then((response) => {
 
       setData(response.data)
 
